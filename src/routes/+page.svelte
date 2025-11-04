@@ -5,20 +5,13 @@
 	import '@selemondev/svelte-marquee/dist/style.css';
 	import GithubIcon from '@lucide/svelte/icons/github';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import MapPinIcon from '@lucide/svelte/icons/map-pin';
-	import StarIcon from '@lucide/svelte/icons/star';
 	import EyeIcon from '@lucide/svelte/icons/eye';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import {
-		DropdownMenu,
-		DropdownMenuTrigger,
-		DropdownMenuContent,
-		DropdownMenuItem
-	} from '$lib/components/ui/dropdown-menu/index.js';
 
 	type University = {
 		name: string;
 		logo: string;
+		image: string;
 		locations: string[];
 		priceRange: { min: number; max: number };
 		reviews: { rating: number; count: number };
@@ -29,6 +22,8 @@
 		{
 			name: 'Universitas Terbuka',
 			logo: '/logo/universities/ut.svg',
+			image:
+				'https://www.ut.ac.id/wp-content/uploads/2025/03/Gerbang-Universitas-Terbuka-2025-768x524.jpg',
 			locations: [
 				'Jakarta, Indonesia',
 				'Bogor, Indonesia',
@@ -42,18 +37,60 @@
 		{
 			name: 'Universitas Siber Asia',
 			logo: '/logo/universities/ut.svg',
+			image: 'https://pmb.unsia.ac.id/uploads/asiacyberuniversity/imgpengumumanspmb/32.jpg',
 			locations: ['Yogyakarta, Indonesia', 'Semarang, Indonesia'],
 			priceRange: { min: 3800000, max: 4600000 },
 			reviews: { rating: 4.3, count: 860 },
 			views: 7400
 		},
 		{
-			name: 'Universitas Buka Raya',
+			name: 'Universitas Insan Cita Indonesia',
 			logo: '/logo/universities/ut.svg',
-			locations: ['Bandung, Indonesia', 'Cimahi, Indonesia', 'Sumedang, Indonesia'],
+			image:
+				'https://maukuliah.ap-south-1.linodeobjects.com/gallery/031070/1694509804-neIwacbhnd-thumbnail.jpg',
+			locations: ['Jakarta, Indonesia', 'Tangerang, Indonesia'],
 			priceRange: { min: 3500000, max: 4200000 },
-			reviews: { rating: 4.8, count: 2105 },
-			views: 15400
+			reviews: { rating: 4.5, count: 980 },
+			views: 8900
+		},
+		{
+			name: 'Universitas Bina Nusantara',
+			logo: '/logo/universities/ut.svg',
+			image:
+				'https://cdn.antaranews.com/cache/1200x800/2023/06/02/WhatsApp-Image-2023-06-01-at-16.47.11.jpeg',
+			locations: ['Jakarta, Indonesia', 'Bandung, Indonesia'],
+			priceRange: { min: 4500000, max: 5500000 },
+			reviews: { rating: 4.7, count: 1890 },
+			views: 15600
+		},
+		{
+			name: 'Universitas Ciputra',
+			logo: '/logo/universities/ut.svg',
+			image:
+				'https://blog-static.mamikos.com/wp-content/uploads/2023/03/Universitas-Ciputra-1024x768.jpg',
+			locations: ['Surabaya, Indonesia', 'Jakarta, Indonesia'],
+			priceRange: { min: 4200000, max: 5200000 },
+			reviews: { rating: 4.4, count: 1120 },
+			views: 9800
+		},
+		{
+			name: 'Universitas Indraprasta PGRI',
+			logo: '/logo/universities/ut.svg',
+			image: 'https://kelaskaryawan.net/wp-content/uploads/2016/06/Unindra.jpg',
+			locations: ['Jakarta, Indonesia', 'Depok, Indonesia'],
+			priceRange: { min: 3000000, max: 3800000 },
+			reviews: { rating: 4.2, count: 750 },
+			views: 6200
+		},
+		{
+			name: 'Universitas Persada Indonesia Y.A.I',
+			logo: '/logo/universities/ut.svg',
+			image:
+				'https://www.streetdirectory.com/stock_images/indonesia/simg_show/ind_11833666970366/1/universitas_persada_indonesia_yai/',
+			locations: ['Jakarta, Indonesia'],
+			priceRange: { min: 3600000, max: 4400000 },
+			reviews: { rating: 4.1, count: 680 },
+			views: 5900
 		}
 	];
 
@@ -129,18 +166,18 @@
 	/>
 </main>
 
+<hr class="border-dashed border-border" />
+
 <section>
-	<div class="inner py-6">
-		<h2 class="text-4xl font-semibold">Temukan Kampus Online yang Pas Buatmu</h2>
-		<p class="mt-4 text-xl">Bandingkan universitas, jurusan, biaya, dan sistem belajar.</p>
-		<div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+	<div class="inner border-x border-dashed border-border p-10">
+		<h2 class="text-3xl font-semibold">Temukan Kampus Online yang Pas Buatmu</h2>
+		<p class="mt-2 text-muted-foreground">
+			Bandingkan universitas, jurusan, biaya, dan sistem belajar.
+		</p>
+		<div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each universities as u}
 				<div class="relative overflow-hidden rounded-xl">
-					<img
-						src="https://www.ut.ac.id/wp-content/uploads/2025/03/Gerbang-Universitas-Terbuka-2025-768x524.jpg"
-						alt=""
-						class="aspect-video h-40 w-full object-cover"
-					/>
+					<img src={u.image} alt={u.name} class="aspect-video h-40 w-full object-cover" />
 					<Badge
 						variant="secondary"
 						class="absolute top-0 right-0 flex items-center rounded-none rounded-bl-md"
@@ -150,13 +187,13 @@
 					</Badge>
 					<Card.Root class="relative -mt-4">
 						<Card.Header>
-							<img alt={u.name} src={u.logo} class="h-10 w-10 rounded-md" />
+							<img alt={u.name} src={u.logo} class="size-10" />
 							<Card.Title class="text-2xl">{u.name}</Card.Title>
 						</Card.Header>
 
 						<Card.Content>
 							<p class="text-muted-foreground">Rentang biaya per semester</p>
-							<p class="mt-1 text-2xl font-semibold">
+							<p class="mt-1 text-xl font-semibold">
 								Rp {formatIDR(u.priceRange.min)}–{formatIDR(u.priceRange.max)}
 							</p>
 						</Card.Content>
