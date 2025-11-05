@@ -176,7 +176,7 @@
 		</p>
 		<div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each universities as u}
-				<div class="relative overflow-hidden rounded-xl">
+				<div class="relative flex flex-col overflow-hidden rounded-xl">
 					<img src={u.image} alt={u.name} class="aspect-video h-40 w-full object-cover" />
 					<Badge
 						variant="secondary"
@@ -185,13 +185,13 @@
 						<EyeIcon class="size-3.5 text-muted-foreground" />
 						<span class="text-muted-foreground">{formatIDR(u.views)}x dilihat</span>
 					</Badge>
-					<Card.Root class="relative -mt-4">
+					<Card.Root class="relative -mt-4 h-full">
 						<Card.Header>
 							<img alt={u.name} src={u.logo} class="size-10" />
 							<Card.Title class="text-2xl">{u.name}</Card.Title>
 						</Card.Header>
 
-						<Card.Content>
+						<Card.Content class="mt-auto">
 							<p class="text-muted-foreground">Rentang biaya per semester</p>
 							<p class="mt-1 text-xl font-semibold">
 								Rp {formatIDR(u.priceRange.min)}–{formatIDR(u.priceRange.max)}
