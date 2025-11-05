@@ -7,6 +7,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import EyeIcon from '@lucide/svelte/icons/eye';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import { onMount } from 'svelte';
 
 	type University = {
 		name: string;
@@ -97,8 +98,8 @@
 	const formatIDR = (n: number): string => new Intl.NumberFormat('id-ID').format(n);
 </script>
 
-<header class="fixed inset-x-0 top-0 z-10">
-	<div class="inner py-4">
+<header class="fixed inset-x-0 top-0 z-10 border-b border-dashed border-border bg-background">
+	<div class="inner border-x border-dashed border-border px-10 py-4">
 		<div class="flex items-center justify-between">
 			<a href={resolve('/')} class="text-lg font-bold text-gray-700">kulon.id</a>
 			<div class="flex items-center gap-8">
@@ -120,8 +121,8 @@
 	</div>
 </header>
 
-<main class="relative flex min-h-screen bg-linear-to-b from-[#4ED7F1] to-white">
-	<div class="inner py-38">
+<main>
+	<div class="inner border-x border-dashed border-border px-10 pt-38 pb-18">
 		<div class="flex flex-col items-center">
 			<span class="mb-2 text-center font-handwriting text-lg underline decoration-wavy">
 				Semua Tentang Kuliah Online
@@ -154,16 +155,6 @@
 			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
 		</Marquee>
 	</div>
-	<img
-		class="pointer-events-none absolute bottom-0 left-0"
-		src="/decorations/cloud.png"
-		alt="Cloud"
-	/>
-	<img
-		class="pointer-events-none absolute right-0 bottom-0 -scale-x-100"
-		src="/decorations/cloud.png"
-		alt="Cloud"
-	/>
 </main>
 
 <hr class="border-dashed border-border" />
