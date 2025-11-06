@@ -7,7 +7,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import EyeIcon from '@lucide/svelte/icons/eye';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { onMount } from 'svelte';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 
 	type University = {
 		name: string;
@@ -21,7 +21,7 @@
 
 	const universities: University[] = [
 		{
-			name: 'Universitas Terbuka',
+			name: 'Terbuka',
 			logo: '/logo/universities/ut.svg',
 			image:
 				'https://www.ut.ac.id/wp-content/uploads/2025/03/Gerbang-Universitas-Terbuka-2025-768x524.jpg',
@@ -36,7 +36,7 @@
 			views: 12800
 		},
 		{
-			name: 'Universitas Siber Asia',
+			name: 'Siber Asia',
 			logo: '/logo/universities/ut.svg',
 			image: 'https://pmb.unsia.ac.id/uploads/asiacyberuniversity/imgpengumumanspmb/32.jpg',
 			locations: ['Yogyakarta, Indonesia', 'Semarang, Indonesia'],
@@ -45,7 +45,7 @@
 			views: 7400
 		},
 		{
-			name: 'Universitas Insan Cita Indonesia',
+			name: 'Insan Cita Indonesia',
 			logo: '/logo/universities/ut.svg',
 			image:
 				'https://maukuliah.ap-south-1.linodeobjects.com/gallery/031070/1694509804-neIwacbhnd-thumbnail.jpg',
@@ -55,7 +55,7 @@
 			views: 8900
 		},
 		{
-			name: 'Universitas Bina Nusantara',
+			name: 'Bina Nusantara',
 			logo: '/logo/universities/ut.svg',
 			image:
 				'https://cdn.antaranews.com/cache/1200x800/2023/06/02/WhatsApp-Image-2023-06-01-at-16.47.11.jpeg',
@@ -65,7 +65,7 @@
 			views: 15600
 		},
 		{
-			name: 'Universitas Ciputra',
+			name: 'Ciputra',
 			logo: '/logo/universities/ut.svg',
 			image:
 				'https://blog-static.mamikos.com/wp-content/uploads/2023/03/Universitas-Ciputra-1024x768.jpg',
@@ -75,7 +75,7 @@
 			views: 9800
 		},
 		{
-			name: 'Universitas Indraprasta PGRI',
+			name: 'Indraprasta PGRI',
 			logo: '/logo/universities/ut.svg',
 			image: 'https://kelaskaryawan.net/wp-content/uploads/2016/06/Unindra.jpg',
 			locations: ['Jakarta, Indonesia', 'Depok, Indonesia'],
@@ -84,7 +84,7 @@
 			views: 6200
 		},
 		{
-			name: 'Universitas Persada Indonesia Y.A.I',
+			name: 'Persada Indonesia Y.A.I',
 			logo: '/logo/universities/ut.svg',
 			image:
 				'https://www.streetdirectory.com/stock_images/indonesia/simg_show/ind_11833666970366/1/universitas_persada_indonesia_yai/',
@@ -138,21 +138,17 @@
 				<Button size="lg" variant="outline">Cari Teman</Button>
 			</div>
 		</div>
-		<Marquee
-			innerClassName="mt-25"
-			direction="left"
-			fade={true}
-			reverse={false}
-			pauseOnHover={false}
-		>
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
-			<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
+		<Marquee innerClassName="mt-25" pauseOnHover>
+			{#each Array(20) as _, i}
+				<Tooltip.Provider delayDuration={0}>
+					<Tooltip.Root>
+						<Tooltip.Trigger>
+							<img class="h-14" src="/logo/universities/ut.svg" alt="Universitas Terbuka" />
+						</Tooltip.Trigger>
+						<Tooltip.Content>Universitas Terbuka</Tooltip.Content>
+					</Tooltip.Root>
+				</Tooltip.Provider>
+			{/each}
 		</Marquee>
 	</div>
 </main>
@@ -167,8 +163,23 @@
 		</p>
 		<div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each universities as u}
-				<div class="relative flex flex-col overflow-hidden rounded-xl">
-					<img src={u.image} alt={u.name} class="aspect-video h-40 w-full object-cover" />
+				<div
+					class="relative flex flex-col overflow-hidden rounded-xl border border-dashed border-border transition-transform hover:-rotate-4"
+				>
+					<div
+						class="relative aspect-video h-40 w-full bg-cover object-cover"
+						style="background-image: url({u.image});"
+					>
+						<div
+							class="absolute inset-x-0 top-[60%] bottom-0 bg-linear-to-b from-transparent to-white"
+						></div>
+						<div
+							class="absolute bottom-0 left-0 size-40 -translate-x-1/2 translate-y-[70%] rounded-full bg-white blur-xl"
+						></div>
+						<div
+							class="absolute right-0 bottom-0 size-40 translate-x-1/2 translate-y-[70%] rounded-full bg-white blur-xl"
+						></div>
+					</div>
 					<Badge
 						variant="secondary"
 						class="absolute top-0 right-0 flex items-center rounded-none rounded-bl-md"
@@ -176,13 +187,14 @@
 						<EyeIcon class="size-3.5 text-muted-foreground" />
 						<span class="text-muted-foreground">{formatIDR(u.views)}x dilihat</span>
 					</Badge>
-					<Card.Root class="relative -mt-4 h-full">
-						<Card.Header>
-							<img alt={u.name} src={u.logo} class="size-10" />
+					<Card.Root class="relative -mt-12 h-full gap-4 border-none bg-transparent">
+						<Card.Header class="gap-0">
+							<img alt={u.name} src={u.logo} class="mb-2 size-10" />
+							<p class="text-sm text-muted-foreground">Universitas</p>
 							<Card.Title class="text-2xl">{u.name}</Card.Title>
 						</Card.Header>
 
-						<Card.Content class="mt-auto">
+						<Card.Content>
 							<p class="text-muted-foreground">Rentang biaya per semester</p>
 							<p class="mt-1 text-xl font-semibold">
 								Rp {formatIDR(u.priceRange.min)}–{formatIDR(u.priceRange.max)}
