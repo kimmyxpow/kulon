@@ -124,10 +124,8 @@
 <main>
 	<div class="inner border-x border-dashed border-border px-10 pt-38 pb-18">
 		<div class="flex flex-col items-center">
-			<span class="mb-2 text-center font-handwriting text-lg underline decoration-wavy">
-				Semua Tentang Kuliah Online
-			</span>
-			<h1 class="max-w-4xl text-center text-6xl font-semibold">
+			<span class="mb-2 text-center font-handwriting text-2xl"> Semua Tentang Kuliah Online </span>
+			<h1 class="max-w-4xl text-center text-6xl">
 				Kuliah Online itu Fleksibel. Temennya Juga Harus Ada.
 			</h1>
 			<p class="mt-6 max-w-lg text-center text-xl">
@@ -157,14 +155,14 @@
 
 <section>
 	<div class="inner border-x border-dashed border-border p-10">
-		<h2 class="text-3xl font-semibold">Temukan Kampus Online yang Pas Buatmu</h2>
-		<p class="mt-2 text-muted-foreground">
+		<h2 class="text-5xl">Temukan Kampus Online yang Pas Buatmu</h2>
+		<p class="mt-2 text-lg text-muted-foreground">
 			Bandingkan universitas, jurusan, biaya, dan sistem belajar.
 		</p>
 		<div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each universities as u}
 				<div
-					class="relative flex flex-col overflow-hidden rounded-xl border border-dashed border-border transition-transform hover:-rotate-4"
+					class="relative flex flex-col overflow-hidden rounded-xl border border-dashed border-border transition-transform duration-500 hover:-rotate-2"
 				>
 					<div
 						class="relative aspect-video h-40 w-full bg-cover object-cover"
@@ -196,7 +194,7 @@
 
 						<Card.Content>
 							<p class="text-muted-foreground">Rentang biaya per semester</p>
-							<p class="mt-1 text-xl font-semibold">
+							<p class="mt-1 text-xl">
 								Rp {formatIDR(u.priceRange.min)}–{formatIDR(u.priceRange.max)}
 							</p>
 						</Card.Content>
@@ -207,6 +205,84 @@
 					</Card.Root>
 				</div>
 			{/each}
+		</div>
+	</div>
+</section>
+
+<hr class="border-dashed border-border" />
+
+<section>
+	<div class="inner border-x border-dashed border-border p-10">
+		<h2 class="text-5xl">Artikel & Insight Seputar Kuliah Online</h2>
+		<p class="mt-2 text-lg text-muted-foreground">
+			Kumpulan tulisan seputar kampus online, pengalaman mahasiswa, tips belajar, dan perkembangan
+			pendidikan digital.
+		</p>
+		<div class="flex flex-col">
+			<hr class="my-10 border-dashed border-border" />
+
+			<div class="flex gap-10">
+				<div class="flex w-[200px] shrink-0 flex-col gap-1">
+					<span class="text-lg">8 menit membaca</span>
+					<span class="text-sm text-muted-foreground">02 Des 20</span>
+				</div>
+				<div class="flex grow flex-col gap-2">
+					<h3 class="text-3xl">Panduan Memilih Kampus Online yang Terakreditasi</h3>
+					<p class="text-muted-foreground">
+						Daftar kampus yang menyediakan pembelajaran 100% online. Lorem ipsum dolor sit amet
+						consectetur.
+					</p>
+				</div>
+				<div class="flex w-[200px] shrink-0 justify-end">
+					<a href="/" class="text-muted-foreground underline hover:text-foreground"
+						>Baca selengkapnya</a
+					>
+				</div>
+			</div>
+
+			<hr class="my-10 border-dashed border-border" />
+
+			<div class="flex gap-10">
+				<div class="flex w-[200px] shrink-0 flex-col gap-1">
+					<span class="text-lg">8 menit membaca</span>
+					<span class="text-sm text-muted-foreground">02 Des 20</span>
+				</div>
+				<div class="flex grow flex-col gap-2">
+					<h3 class="text-3xl">Panduan Memilih Kampus Online yang Terakreditasi</h3>
+					<p class="text-muted-foreground">
+						Daftar kampus yang menyediakan pembelajaran 100% online. Lorem ipsum dolor sit amet
+						consectetur.
+					</p>
+				</div>
+				<div class="flex w-[200px] shrink-0 justify-end">
+					<a href="/" class="text-muted-foreground underline hover:text-foreground"
+						>Baca selengkapnya</a
+					>
+				</div>
+			</div>
+
+			<hr class="my-10 border-dashed border-border" />
+
+			<div class="flex gap-10">
+				<div class="flex w-[200px] shrink-0 flex-col gap-1">
+					<span class="text-lg">8 menit membaca</span>
+					<span class="text-sm text-muted-foreground">02 Des 20</span>
+				</div>
+				<div class="flex grow flex-col gap-2">
+					<h3 class="text-3xl">Panduan Memilih Kampus Online yang Terakreditasi</h3>
+					<p class="text-muted-foreground">
+						Daftar kampus yang menyediakan pembelajaran 100% online. Lorem ipsum dolor sit amet
+						consectetur.
+					</p>
+				</div>
+				<div class="flex w-[200px] shrink-0 justify-end">
+					<a href="/" class="text-muted-foreground underline hover:text-foreground"
+						>Baca selengkapnya</a
+					>
+				</div>
+			</div>
+
+			<hr class="my-10 border-dashed border-border" />
 		</div>
 	</div>
 </section>
