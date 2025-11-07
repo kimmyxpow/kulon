@@ -162,34 +162,27 @@
 		<div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each universities as u}
 				<div
-					class="relative flex flex-col overflow-hidden rounded-xl border border-dashed border-border transition-transform duration-500 hover:-rotate-2"
+					class="relative flex flex-col overflow-hidden rounded-3xl border border-dashed border-border transition-transform duration-500 hover:-rotate-2"
 				>
-					<div
-						class="relative aspect-video h-40 w-full bg-cover object-cover"
-						style="background-image: url({u.image});"
-					>
-						<div
-							class="absolute inset-x-0 top-[60%] bottom-0 bg-linear-to-b from-transparent to-white"
-						></div>
-						<div
-							class="absolute bottom-0 left-0 size-40 -translate-x-1/2 translate-y-[70%] rounded-full bg-white blur-xl"
-						></div>
-						<div
-							class="absolute right-0 bottom-0 size-40 translate-x-1/2 translate-y-[70%] rounded-full bg-white blur-xl"
-						></div>
-					</div>
 					<Badge
 						variant="secondary"
-						class="absolute top-0 right-0 flex items-center rounded-none rounded-bl-md"
+						class="absolute top-0 right-0 flex items-center rounded-none rounded-bl-md bg-white"
 					>
 						<EyeIcon class="size-3.5 text-muted-foreground" />
 						<span class="text-muted-foreground">{formatIDR(u.views)}x dilihat</span>
 					</Badge>
-					<Card.Root class="relative -mt-12 h-full gap-4 border-none bg-transparent">
+					<div class="aspect-video h-40 w-full overflow-hidden rounded-2xl">
+						<img class="size-full object-cover" src={u.image} alt={u.name} />
+					</div>
+					<Card.Root class="relative -mt-14 gap-4 border-none bg-transparent">
 						<Card.Header class="gap-0">
-							<img alt={u.name} src={u.logo} class="mb-2 size-10" />
+							<div class="mb-2 flex size-16 items-center justify-center rounded-2xl bg-white">
+								<img alt={u.name} src={u.logo} class="size-12" />
+							</div>
 							<p class="text-sm text-muted-foreground">Universitas</p>
-							<Card.Title class="text-2xl">{u.name}</Card.Title>
+							<Card.Title class="text-3xl">
+								<h3>{u.name}</h3>
+							</Card.Title>
 						</Card.Header>
 
 						<Card.Content>
