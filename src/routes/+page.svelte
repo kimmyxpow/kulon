@@ -101,7 +101,7 @@
 <header class="fixed inset-x-0 top-0 z-10 border-b border-dashed border-border bg-background">
 	<div class="inner border-x border-dashed border-border px-10 py-4">
 		<div class="flex items-center justify-between">
-			<a href={resolve('/')} class="text-lg font-bold text-gray-700">kuliahdaring.com</a>
+			<a href={resolve('/')} class="text-lg font-bold text-gray-700">kampusdaring.com</a>
 			<div class="flex items-center gap-8">
 				<div class="flex gap-6">
 					<a class="text-gray-600 decoration-wavy hover:underline" href={resolve('/')}> Beranda </a>
@@ -124,16 +124,19 @@
 <main>
 	<div class="inner border-x border-dashed border-border px-10 pt-38 pb-18">
 		<div class="flex flex-col items-center">
-			<span class="mb-2 text-center font-handwriting text-2xl"> Semua Tentang Kuliah Online </span>
+			<span class="mb-2 text-center font-handwriting text-2xl">
+				Portal Informasi Kuliah Online Terlengkap
+			</span>
 			<h1 class="max-w-4xl text-center text-6xl">
-				Kuliah Online itu Fleksibel. Temennya Juga Harus Ada.
+				Temukan Panduan Kuliah Online & Terhubung dengan Komunitas Belajar
 			</h1>
 			<p class="mt-6 max-w-lg text-center text-xl">
-				Bandingkan jurusan, biaya, sistem belajar—plus ketemu orang-orang yang juga kuliah online.
+				Akses informasi komprehensif seputar perkuliahan online, program studi, dan tips akademik.
+				Bergabung dengan komunitas untuk berdiskusi dan berbagi pengalaman.
 			</p>
 			<div class="mt-8 flex gap-2">
-				<Button size="lg">Cari Kampus</Button>
-				<Button size="lg" variant="outline">Cari Teman</Button>
+				<Button size="lg">Bergabung dengan Komunitas</Button>
+				<Button size="lg" variant="outline">Jelajahi Direktori Universitas</Button>
 			</div>
 		</div>
 		<Marquee innerClassName="mt-25" pauseOnHover>
@@ -218,6 +221,14 @@
 				<div class="flex w-[200px] shrink-0 flex-col gap-1">
 					<span class="text-lg">8 menit membaca</span>
 					<span class="text-sm text-muted-foreground">02 Des 20</span>
+					<div class="mt-4 flex items-center gap-2">
+						<img
+							class="aspect-square size-8 rounded-full"
+							src="https://images.unsplash.com/photo-1761959939997-bde7210e7b1f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2342"
+							alt="Siapa"
+						/>
+						<span class="text-sm text-muted-foreground">Abi Noval Fauzi</span>
+					</div>
 				</div>
 				<div class="flex grow flex-col gap-2">
 					<h3 class="text-3xl">Panduan Memilih Kampus Online yang Terakreditasi</h3>
@@ -239,6 +250,14 @@
 				<div class="flex w-[200px] shrink-0 flex-col gap-1">
 					<span class="text-lg">8 menit membaca</span>
 					<span class="text-sm text-muted-foreground">02 Des 20</span>
+					<div class="mt-4 flex items-center gap-2">
+						<img
+							class="aspect-square size-8 rounded-full"
+							src="https://images.unsplash.com/photo-1761959939997-bde7210e7b1f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2342"
+							alt="Siapa"
+						/>
+						<span class="text-sm text-muted-foreground">Abi Noval Fauzi</span>
+					</div>
 				</div>
 				<div class="flex grow flex-col gap-2">
 					<h3 class="text-3xl">Panduan Memilih Kampus Online yang Terakreditasi</h3>
@@ -260,6 +279,14 @@
 				<div class="flex w-[200px] shrink-0 flex-col gap-1">
 					<span class="text-lg">8 menit membaca</span>
 					<span class="text-sm text-muted-foreground">02 Des 20</span>
+					<div class="mt-4 flex items-center gap-2">
+						<img
+							class="aspect-square size-8 rounded-full"
+							src="https://images.unsplash.com/photo-1761959939997-bde7210e7b1f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2342"
+							alt="Siapa"
+						/>
+						<span class="text-sm text-muted-foreground">Abi Noval Fauzi</span>
+					</div>
 				</div>
 				<div class="flex grow flex-col gap-2">
 					<h3 class="text-3xl">Panduan Memilih Kampus Online yang Terakreditasi</h3>
