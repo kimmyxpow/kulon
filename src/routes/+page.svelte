@@ -101,7 +101,7 @@
 <header class="fixed inset-x-0 top-0 z-10 border-b border-dashed border-border bg-background">
 	<div class="inner border-x border-dashed border-border px-10 py-4">
 		<div class="flex items-center justify-between">
-			<a href={resolve('/')} class="text-lg font-bold text-gray-700">kulon.id</a>
+			<a href={resolve('/')} class="text-lg font-bold text-gray-700">kuliahdaring.com</a>
 			<div class="flex items-center gap-8">
 				<div class="flex gap-6">
 					<a class="text-gray-600 decoration-wavy hover:underline" href={resolve('/')}> Beranda </a>
