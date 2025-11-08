@@ -158,7 +158,7 @@
 
 <section>
 	<div class="inner border-x border-dashed border-border p-10">
-		<h2 class="text-5xl">Temukan Kampus Online yang Pas Buatmu</h2>
+		<h2 class="text-5xl">Direktori Kampus Online</h2>
 		<p class="mt-2 text-lg text-muted-foreground">
 			Bandingkan universitas, jurusan, biaya, dan sistem belajar.
 		</p>
@@ -209,7 +209,7 @@
 
 <section>
 	<div class="inner border-x border-dashed border-border p-10">
-		<h2 class="text-5xl">Artikel & Insight Seputar Kuliah Online</h2>
+		<h2 class="text-5xl">Artikel & Insight</h2>
 		<p class="mt-2 text-lg text-muted-foreground">
 			Kumpulan tulisan seputar kampus online, pengalaman mahasiswa, tips belajar, dan perkembangan
 			pendidikan digital.
