@@ -130,7 +130,7 @@
 			<h1 class="max-w-4xl text-center text-6xl">
 				Temukan Panduan Kuliah Online & Terhubung dengan Komunitas Belajar
 			</h1>
-			<p class="mt-6 max-w-lg text-center text-xl">
+			<p class="mt-6 max-w-2xl text-center text-xl">
 				Akses informasi komprehensif seputar perkuliahan online, program studi, dan tips akademik.
 				Bergabung dengan komunitas untuk berdiskusi dan berbagi pengalaman.
 			</p>
